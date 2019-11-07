@@ -2,15 +2,28 @@
 
 namespace Amplitudo;
 
-class Vozilo
+require_once 'Movable.php';
+
+use Amplitudo\Movable;
+
+class Vozilo implements Movable
 {
+    static protected $brojVozila = 0;
+
     protected $naziv;
     public $godiste;
+    protected $x;
 
     public function __construct($naziv, $godiste)
     {
         $this->naziv = $naziv;
         $this->godiste = $godiste;
+        Vozilo::$brojVozila += 1;
+    }
+
+    public static function ukupanBrojVozila()
+    {
+        return Vozilo::$brojVozila;
     }
 
     public function sayHello()
@@ -32,5 +45,15 @@ class Vozilo
     public function setNaziv($naziv)
     {
         $this->naziv = $naziv;
+    }
+
+    public function idiNaprijed($daljina)
+    {
+        $this->x += $daljina;
+    }
+
+    public function idiNazad($daljina)
+    {
+        // TODO: Implement idiNazad() method.
     }
 }

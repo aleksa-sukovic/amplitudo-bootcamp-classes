@@ -14,11 +14,6 @@ class Auto extends Vozilo
 
         $this->boja = $boja;
     }
-    
-    public function __toString()
-    {
-        return parent::__toString() . " i moja boja je {$this->boja}";
-    }
 }
 
 
