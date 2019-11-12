@@ -14,6 +14,16 @@ class Auto extends Vozilo
 
         $this->boja = $boja;
     }
+
+    public function napraviPuniNaziv()
+    {
+        return urlencode($this->naziv . '-' . $this->godiste . '-' . $this->boja);
+    }
+
+    public function idiNazad($daljina)
+    {
+        // TODO: Implement idiNazad() method.
+    }
 }
 
 

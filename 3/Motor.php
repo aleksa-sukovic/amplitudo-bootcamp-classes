@@ -24,6 +24,11 @@ class Motor extends Vozilo
     {
         $this->x += $daljina * 0.1 * $this->kubikaza;
     }
+
+    public function napraviPuniNaziv()
+    {
+        return urlencode($this->naziv . '-' . $this->godiste . '-' . $this->kubikaza);
+    }
 }
 
 

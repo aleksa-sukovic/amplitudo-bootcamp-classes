@@ -6,7 +6,7 @@ require_once 'Movable.php';
 
 use Amplitudo\Movable;
 
-class Vozilo implements Movable
+abstract class Vozilo implements Movable
 {
     static protected $brojVozila = 0;
 
@@ -25,6 +25,8 @@ class Vozilo implements Movable
     {
         return Vozilo::$brojVozila;
     }
+
+    public abstract function napraviPuniNaziv();
 
     public function sayHello()
     {
