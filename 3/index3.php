@@ -20,6 +20,8 @@ function stampajPuniNaziv(Vozilo $vozilo)
 stampajPuniNaziv($auto);
 stampajPuniNaziv($motor);
 
+$auto->napraviZvuk();
+$auto->napraviJakiZvuk();
 
 
 
