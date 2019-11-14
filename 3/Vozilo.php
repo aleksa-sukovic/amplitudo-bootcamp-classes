@@ -3,8 +3,10 @@
 namespace Amplitudo;
 
 require_once 'Movable.php';
+require_once 'MovementException.php';
 
 use Amplitudo\Movable;
+use Amplitudo\MovementException;
 
 abstract class Vozilo implements Movable
 {
@@ -14,6 +16,12 @@ abstract class Vozilo implements Movable
     public $godiste;
     protected $x;
 
+    /**
+     * Vozilo constructor.
+     *
+     * @param int $naziv
+     * @param $godiste
+     */
     public function __construct($naziv, $godiste)
     {
         $this->naziv = $naziv;
@@ -51,6 +59,10 @@ abstract class Vozilo implements Movable
 
     public function idiNaprijed($daljina)
     {
+        if (!is_numeric($daljina)) {
+            throw new MovementException();
+        }
+
         $this->x += $daljina;
     }
 
