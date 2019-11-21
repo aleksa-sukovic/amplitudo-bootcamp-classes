@@ -1,11 +1,11 @@
 <?php
 
-namespace Amplitudo\Patterns;
+namespace Amplitudo\Patterns\Singleton;
 
 class Singleton
 {
     /**
-     * @var Singleton q
+     * @var Singleton
      */
     protected static $instance;
 
@@ -18,7 +18,7 @@ class Singleton
 
     public function getNumber()
     {
-        return Singleton::$instance->getNumber();
+        return $this->number;
     }
 
     public static function getInstance(): Singleton
